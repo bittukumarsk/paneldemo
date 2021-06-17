@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> ShadvalPay Admin Panel </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Favicon Link -->
+    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <!--  JQuery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <!-- Loader Section Start -->
+    <!-- <div class="loader">
+        <div class="loader-inner">
+            <div class="loader-inner-item">
+                <div class="loader-inner-item">
+                    <div class="loader-inner-item">
+                        <div class="loader-inner-item">
+                            <div class="loader-inner-item"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Loader Section Finish -->
+
+    <!-- Header Section Start -->
+    <header class="header">
+        <div class="open hide"> <i class="fa fa-bars"></i> </div>
+        <div class="close show"> <i class="fa fa-bars"></i> </div>
+        <div class="nav">
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo">
+                <img src="./icons/logo.png" alt="Logo">
+            </a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Daily Collection </a>
+                </li>
+            </ul>
+            <!-- Logout Button -->
+            <div class="logout">
+                <form action="#">
+                    <button type="submit"> <i class="fa fa-power-off"></i> Logout </button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section Finish -->
+
+    <!-- Main Content -->
+    <section class="main-container">
+        <div class="sidebar">
+            <div class="sidebar-inner">
+                <div class="profile-info">
+                    <div class="profile-img">
+                        <a href="index.html"> <img src="./images/user.jpg" alt="User Image" title="User Image"> </a>
+                    </div>
+                    <div class="profile-data">
+                        <p class="name"> Welcome, Username </p>
+                    </div>
+                </div>
+                <form class="sidebar-form" action="" method="get">
+                    <div class="input-group">
+                        <input type="text" name="query" id="query" class="form-control" placeholder="Search Member" autocomplete="off">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
+                <ul class="sidebar-menu">
+                    <li onclick="changeState(0)">
+                        <a href="search.html">
+                            <div class="icon"> <i class="fa fa-search"></i> </div>
+                            <div class="title"> Search </div>
+                        </a>
+                    </li>
+                    <li class="active" onclick="changeState(1)">
+                        <a href="index.html">
+                            <div class="icon"> <i class="fa fa-tachometer"></i> </div>
+                            <div class="title"> Dashboard </div>
+                        </a>
+                    </li>
+                    <li onclick="changeState(2)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-users"></i> </div>
+                            <div class="title"> Member Management </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="members.html"> <i class="fa fa-circle-o"></i> Members </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(3)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-th-list"></i> </div>
+                            <div class="title"> Saving / Current A/c </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="accounts.html"><i class="fa fa-circle-o"></i> Accounts </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(4)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-th-list"></i> </div>
+                            <div class="title"> FD / MIS Acconts </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="fd_accounts.html"><i class="fa fa-circle-o"></i> FD Accounts </a>
+                            </li>
+                            <li>
+                                <a href="mis_accounts.html"><i class="fa fa-circle-o"></i> MIS Accounts </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(5)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-th-list"></i> </div>
+                            <div class="title"> RD / DD Accounts </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> RD Accounts </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> DD Accounts </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(6)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-print"></i> </div>
+                            <div class="title"> Print Documents </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="index.html"><i class="fa fa-circle-o"></i> Saving Pass Book </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> FD / MIS Bond </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> FD / MIS Pass Book </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> RD / DD Bond </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> RD / DD Pass Book </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> RD / DD Receipt </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(7)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-th-list"></i> </div>
+                            <div class="title"> IMPS / Virtual IFSC </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> CF Virtual UPIs </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(8)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-th-list"></i> </div>
+                            <div class="title"> Debit Cards </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> Debit Card List </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> Member's KYC </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> Card History </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(9)">
+                        <a href="admin-profile.html">
+                            <div class="icon"> <i class="fa fa-user-circle-o"></i> </div>
+                            <div class="title"> Profile </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="search-div">
+                <form method="get">
+                    <div class="form-group">
+                        <label for="q_company_branch_id_in">Branch :</label>
+                        <select class="form-control select-width-155" name="q_company_branch_id_in" id="q_company_branch_id_in">
+                            <option selected="selected" value="all-user-branches">ALL</option>
+                            <option value="main">MAIN BRANCH</option>
+                        </select>
+                        <button type="submit" class="btn btn-default">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="content">
+                <div class="item">
+                    <div class="details">
+                        <span> 6432 </span>
+                        <p> Members </p>
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <a href="#">
+                        <div class="text"> View Details </div>
+                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="details">
+                        <span> 2432 </span>
+                        <p> Saving Accounts </p>
+                        <i class="fa fa-th-list"></i>
+                    </div>
+                    <a href="#">
+                        <div class="text"> View Details </div>
+                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="details">
+                        <span> 231 </span>
+                        <p> Current Accounts </p>
+                        <i class="fa fa-th-list"></i>
+                    </div>
+                    <a href="#">
+                        <div class="text"> View Details </div>
+                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="details">
+                        <span> 125 </span>
+                        <p> MIS Accounts </p>
+                        <i class="fa fa-th-list"></i>
+                    </div>
+                    <a href="#">
+                        <div class="text"> View Details </div>
+                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="details">
+                        <span> 97 </span>
+                        <p> Recurring Deposits (RDs) </p>
+                        <i class="fa fa-th-list"></i>
+                    </div>
+                    <a href="#">
+                        <div class="text"> View Details </div>
+                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="details">
+                        <span> 234 </span>
+                        <p> Daily Deposits (DDs) </p>
+                        <i class="fa fa-th-list"></i>
+                    </div>
+                    <a href="#">
+                        <div class="text"> View Details </div>
+                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="details">
+                        <span> 845 </span>
+                        <p> Fixed Deposits (FDs) </p>
+                        <i class="fa fa-th-list"></i>
+                    </div>
+                    <a href="#">
+                        <div class="text"> View Details </div>
+                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
+                    </a>
+                </div>
+            </div>
+            <div class="foot" style="margin-top: 195px;">
+                <div class="copy">
+                    <p> Copyright © 2018 - 21. All rights reserved. </p>
+                </div>
+                <div class="images">
+                    <img src="./images/security.png" alt="Security Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Main Content End -->
+
+	<!-- Scroll Button -->
+	<div class="scrolltop float-right">
+        <i class="fa fa-chevron-up" onclick="goToTop()" id="myBtn"></i>  
+    </div>
+
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
