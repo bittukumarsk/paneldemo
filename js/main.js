@@ -20,6 +20,10 @@ $(document).ready(function()
         $(".close").removeClass("show");
         $(".close").addClass("hide");
     });
+    // $(".member_search_div").click(function()
+    // {
+    //     $(".member_search_div").toggleClass("view");
+    // });
 });
 
 /* Menu Open & Close */
@@ -34,4 +38,15 @@ function changeState(i)
         }
     }
     links[i].classList.toggle("show");
+}
+
+const boxes = document.getElementsByClassName('member_search_div');
+const markers = document.getElementsByClassName('marker');
+let j=0;
+for(i=0; i<boxes.length; i++)
+{
+    boxes[i].addEventListener('click', function()
+    {
+        this.classList.toggle("view");
+    })
 }

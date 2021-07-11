@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> ShadvalPay Admin Panel </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Favicon Link -->
+    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+    <!--  JQuery Link -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <!-- Header Section Start -->
+    <header class="header">
+        <div class="open hide"> <i class="fa fa-bars"></i> </div>
+        <div class="close show"> <i class="fa fa-bars"></i> </div>
+        <div class="nav">
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo">
+                <img src="./icons/logo.png" alt="Logo">
+            </a>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> Daily Collection </a>
+                </li>
+            </ul>
+            <!-- Logout Button -->
+            <div class="logout">
+                <form action="#">
+                    <button type="submit"> <i class="fa fa-power-off"></i> Logout </button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section Finish -->
+
+    <!-- Main Content -->
+    <section class="main-container">
+        <div class="sidebar">
+            <div class="sidebar-inner">
+                <div class="profile-info">
+                    <div class="profile-img">
+                        <a href="index.html"> <img src="./images/user.jpg" alt="User Image" title="User Image"> </a>
+                    </div>
+                    <div class="profile-data">
+                        <p class="name"> Welcome, Rupam Kumari </p>
+                        <p> Associate since March 2021 </p>
+                    </div>
+                </div>
+                <form class="sidebar-form" action="" method="get">
+                    <div class="input-group">
+                        <input type="text" name="query" id="query" class="form-control" placeholder="Search Member" autocomplete="off">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
+                <ul class="sidebar-menu">
+                    <li onclick="changeState(0)">
+                        <a href="search.html">
+                            <div class="icon"> <i class="fa fa-search"></i> </div>
+                            <div class="title"> Search </div>
+                        </a>
+                    </li>
+                    <li onclick="changeState(1)">
+                        <a href="index.html">
+                            <div class="icon"> <i class="fa fa-tachometer"></i> </div>
+                            <div class="title"> Dashboard </div>
+                        </a>
+                    </li>
+                    <li class="active" onclick="changeState(2)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-users"></i> </div>
+                            <div class="title"> Member Management </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="members.html" class="active"> <i class="fa fa-circle-o"></i> Members </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(3)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-th-list"></i> </div>
+                            <div class="title"> Saving / Current A/c </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="accounts.html"><i class="fa fa-circle-o"></i> Accounts </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(4)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-th-list"></i> </div>
+                            <div class="title"> FD / MIS Acconts </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="fd_accounts.html"><i class="fa fa-circle-o"></i> FD Accounts </a>
+                            </li>
+                            <li>
+                                <a href="mis_accounts.html"><i class="fa fa-circle-o"></i> MIS Accounts </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(5)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-th-list"></i> </div>
+                            <div class="title"> RD / DD Accounts </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="rd_accounts.html"><i class="fa fa-circle-o"></i> RD Accounts </a>
+                            </li>
+                            <li>
+                                <a href="dd_accounts.html"><i class="fa fa-circle-o"></i> DD Accounts </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(6)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-print"></i> </div>
+                            <div class="title"> Print Documents </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="print-passbook.html"><i class="fa fa-circle-o"></i> Saving Pass Book </a>
+                            </li>
+                            <li>
+                                <a href="fd_mis_print.html"><i class="fa fa-circle-o"></i> FD / MIS Bond </a>
+                            </li>
+                            <li>
+                                <a href="fd_mis_passbook.html"><i class="fa fa-circle-o"></i> FD / MIS Pass Book </a>
+                            </li>
+                            <li>
+                                <a href="rd_dd_bond.html"><i class="fa fa-circle-o"></i> RD / DD Bond </a>
+                            </li>
+                            <li>
+                                <a href="rd_dd_passbook.html"><i class="fa fa-circle-o"></i> RD / DD Pass Book </a>
+                            </li>
+                            <li>
+                                <a href="rd_dd_receipt.html"><i class="fa fa-circle-o"></i> RD / DD Receipt </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(7)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-th-list"></i> </div>
+                            <div class="title"> IMPS / Virtual IFSC </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="cf_virtual_upi.html"><i class="fa fa-circle-o"></i> CF Virtual UPIs </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(8)">
+                        <a>
+                            <div class="icon"> <i class="fa fa-th-list"></i> </div>
+                            <div class="title"> Debit Cards </div>
+                            <div class="arrow"> <i class="fa fa-caret-down"></i> </div>
+                        </a>
+                        <ul class="accordion">
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> Debit Card List </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> Member's KYC </a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-circle-o"></i> Card History </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li onclick="changeState(9)">
+                        <a href="admin-profile.html">
+                            <div class="icon"> <i class="fa fa-user-circle-o"></i> </div>
+                            <div class="title"> Profile </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="member-page member_details">
+                <div class="heading" style="flex-direction: column; align-items: unset;">
+                    <h1> M18092 - KOUSHIK SINGH </h1>
+                    <p> <a href="members.html"> Members </a> KOUSHIK SINGH </p>
+                    <a href="https://banking.shadvalpay.com/print-documents/form-15g?member_id=6dd8dcc3-1cb7-4579-8dfc-f1b36e56ec9d" target="_blank">
+                        <button type="submit" class="btn mem_detail"><i class="fa fa-print"></i> Download 15G/15H </button>
+                    </a>
+                </div>
+                <div class="fullDetailsPage">
+                    <div class="left_div">
+                        <div class="content-div member memberList">
+                            <h2> Member Details </h2>
+                            <div class="table-responsive">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ft-600">Status</td>
+                                            <td>Active</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Branch</td>
+                                            <td>MAIN BRANCH</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Associate/ Advisor/ Staff</td>
+                                            <td>RUPAM KUMARI</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Enrollment Date</td>
+                                            <td>30 April 2021</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Name</td>
+                                            <td>Mr. KOUSHIK SINGH</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Mobile No</td>
+                                            <td>8670495236</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">DOB</td>
+                                            <td>21 Mar 2001</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Age</td>
+                                            <td>20 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Senior Citizen</td>
+                                            <td><span class="label label-danger">No</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Gender</td>
+                                            <td>Male</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Folio No.</td>
+                                            <td>18092</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Father Name</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Mother Name</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Marital Status</td>
+                                            <td>UNMARRIED</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Qualification</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Husband/ Wife Name</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Occupation</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Monthly Income</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Collection Time</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Form 15G/ 15H Uploaded <br> (FY 2021 - 2022)</td>
+                                            <td><span class="label label-danger">No</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-div member member_search_div memberList">
+                            <div class="marker"> </div>
+                            <h2> Member's KYC Details </h2>
+                            <div class="table-responsive">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ft-600">Aadhaar No.</td>
+                                            <td>273484096746</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Voter ID No.</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Pan No.</td>
+                                            <td>LUAPS4704C</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Ration Card No.</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Meter No.</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">CI No.</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">CI Relation</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">DL No</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-div member member_search_div memberList">
+                            <div class="marker"> </div>
+                            <h2> Nominee Details </h2>
+                            <div class="table-responsive">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td class="ft-600">Name</td>
+                                        <td>BULBULI CHAKRABARTY</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ft-600">Relation</td>
+                                        <td>Mother</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ft-600">Mobile No.</td>
+                                        <td>8670495236</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ft-600">Aadhaar No.</td>
+                                        <td>538196186009</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ft-600">Voter ID No.</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ft-600">Pan No.</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ft-600">Address</td>
+                                        <td> RUNIA DHUSMAL, RUNIA, UTTAR DINAJPUR, WEST BENGAL- 733134</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ft-600">Ration Card No.</td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_div">
+                        <div class="content" style="margin-top: 25px;">
+                            <div class="item" style="height: 95px;">
+                                <div class="details">
+                                    <span> 650.00 </span>
+                                    <p> Total Deposits </p>
+                                    <i class="fa fa-money"></i>
+                                </div>
+                            </div>
+                            <div class="item" style="height: 95px;">
+                                <div class="details">
+                                    <span> 0.00 </span>
+                                    <p> Loan Outstanding </p>
+                                    <i class="fa fa-money"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-div member memberList">
+                            <h2> Settings </h2>
+                            <div class="table-responsive" style="margin-top: 20px;">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>Internet Banking / Mob App Enabled</td>
+                                            <td class="text-center"><span class="label label-success">Yes</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Money Transfer</td>
+                                            <td class="text-center"><span class="label label-success">On</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Account Locked</td>
+                                            <td class="text-center"><span class="label label-success">No</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>SMS</td>
+                                            <td class="text-center"><span class="label label-success"> On </span></td>
+                                        </tr>
+                                    </tbody>
+                              </table>
+                            </div>
+                        </div>
+                        <div class="content-div member memberList">
+                            <h2> Internet Banking Username </h2>
+                            <div class="table-responsive">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td> Username</td>
+                                            <td> M18092 </td>
+                                        </tr>
+                                    </tbody>
+                              </table>
+                            </div>
+                        </div>
+                        <div class="content-div member memberList" style="display: flex; justify-content: space-between; height: 88px;">
+                            <h2> Minors </h2>
+                            <button type="submit"> <i class="fa fa-plus"></i> Minor </button>
+                        </div>
+                        <div class="content-div member memberList">
+                            <h2> Share Holding Details </h2>
+                            <div class="table-responsive">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td> Numberof Shares</td>
+                                            <td> 0 </td>
+                                        </tr>
+                                    </tbody>
+                              </table>
+                            </div>
+                        </div>
+                        <div class="content-div member member_search_div memberList">
+                            <div class="marker"> </div>
+                            <h2> Correspondence Address </h2>
+                            <div class="table-responsive">
+                                <table class="table table-details">
+                                    <tbody>
+                                        <tr>
+                                            <td class="ft-600">Address</td>
+                                            <td>RUNIA DHUSMAL RUNIA, UTTAR DINAJPUR West Bengal 733134</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Para/ Ward/ Panchayat/ Area</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Landmark</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="content-div member member_search_div memberList">
+                            <div class="marker"> </div>
+                            <h2> Permanent Address </h2>
+                            <div class="table-responsive">
+                                <table class="table table-details">
+                                    <tbody>
+                                        <tr>
+                                            <td class="ft-600">Address</td>
+                                            <td>RUNIA  DHUSMAL, RUNIA, UTTAR DINAJPUR</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">City / District</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">State</td>
+                                            <td>West Bengal</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">GPS Lat/ Log</td>
+                                            <td>  </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Email</td>
+                                            <td>info@shadvalindianidhilimited.in</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ft-600">Mobile No.</td>
+                                            <td>8670495236</td>
+                                        </tr>
+                                    </tbody>
+                                  </table>
+                            </div>
+                        </div>
+                        <div class="content-div member memberList">
+                            <h2> Member Accounts </h2>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr style="background-color: transparent; color: #222; font-family: 'montserrat-bold';">
+                                            <th>ACCOUNT TYPE</th>
+                                            <th>ACCOUNT NO.</th>
+                                            <th>OPEN DATE</th>
+                                            <th>STATUS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Saving</td>
+                                            <td><a href="">6999417217940</a></td>
+                                            <td>30/04/2021</td>
+                                            <td>Active</td>
+                                        </tr>
+                                    </tbody>
+                              </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="foot" style="margin-top: 25px;">
+                <div class="copy">
+                    <p> Copyright © 2018 - 21. All rights reserved. </p>
+                </div>
+                <div class="images">
+                    <img src="./images/security.png" alt="Security Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Main Content End -->
+
+	<!-- Scroll Button -->
+	<div class="scrolltop float-right">
+        <i class="fa fa-chevron-up" onclick="goToTop()" id="myBtn"></i>  
+    </div>
+
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

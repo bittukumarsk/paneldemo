@@ -97,7 +97,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="active" onclick="changeState(4)">
+                    <li onclick="changeState(4)">
                         <a>
                             <div class="icon"> <i class="fa fa-th-list"></i> </div>
                             <div class="title"> FD / MIS Acconts </div>
@@ -108,7 +108,7 @@
                                 <a href="fd_accounts.html"><i class="fa fa-circle-o"></i> FD Accounts </a>
                             </li>
                             <li>
-                                <a href="mis_accounts.html" class="active"><i class="fa fa-circle-o"></i> MIS Accounts </a>
+                                <a href="mis_accounts.html"><i class="fa fa-circle-o"></i> MIS Accounts </a>
                             </li>
                         </ul>
                     </li>
@@ -154,7 +154,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li onclick="changeState(7)">
+                    <li class="active" onclick="changeState(7)">
                         <a>
                             <div class="icon"> <i class="fa fa-th-list"></i> </div>
                             <div class="title"> IMPS / Virtual IFSC </div>
@@ -162,7 +162,7 @@
                         </a>
                         <ul class="accordion">
                             <li>
-                                <a href="cf_virtual_upi.html"><i class="fa fa-circle-o"></i> CF Virtual UPIs </a>
+                                <a href="cf_virtual_upi.html" class="active"><i class="fa fa-circle-o"></i> CF Virtual UPIs </a>
                             </li>
                         </ul>
                     </li>
@@ -197,93 +197,22 @@
         <div class="main-content">
             <div class="member-page">
                 <div class="heading">
-                    <h1> MIS Deposit Accounts </h1>
+                    <h1> Virtual UPI IDs </h1>
                     <button type="submit"> <i class="fa fa-plus"></i> </button>
                 </div>
                 <div class="content-div member member_search_div">
-                    <h2> Search MIS Account </h2>
+                    <h2> Search Member </h2>
                     <form id="member_search" method="get">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="q_company_branch_id_in"> Branch :</label>
-                                <select class="form-control" name="q_company_branch_id_in" id="q_company_branch_id_in">
-                                    <option selected="selected" value="all-user-branches">ALL</option>
-                                    <option value="3">MAIN BRANCH</option>
-                                </select>
+                                <label for="va_id"> VA ID :</label>
+                                <input class="form-control" placeholder="Search VA ID" autocomplete="off" type="search" name="" id="va_id">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="q_agent_user_id_in">Associate :</label>
-                                <select name="q_agent_user_id_in" id="q_agent_user_id_in" tabindex="-1" aria-hidden="true">
-                                    <option value="0">ALL</option>
-                                    <option data-slug="186fe8c1-fe89-479d-8125-5f4f17eca7be" value="1548">AGT00001 - GULAM DUSTGEER ANSARI</option>
-                                    <option data-slug="b44bb78a-9486-4646-a311-84af946e48b3" value="1549">AGT00002 - NAUSHAD ALI</option>
-                                    <option data-slug="fa708a15-496b-49cb-a51a-febe3e1bd43e" value="1550">AGT00003 - ASHOK MUKHIYA</option>
-                                    <option data-slug="d68b7906-8f0f-4052-b98a-eb9dbb06d10e" value="1551">AGT00004 - SURAJ KUMAR</option>
-                                    <option data-slug="b0d874a4-2abf-48f2-bb3b-1afeb5def4fd" value="1552">AGT00005 - ANIL KUMAR</option>
-                                    <option data-slug="8e891ffd-74dd-4547-a6d6-8da39ec9418e" value="1553">AGT00006 - SANJEEV KUMAR GUPTA</option>
-                                    <option data-slug="327711bd-164b-48a4-bd17-64a65888bdba" value="1554">AGT00007 - SANJAY KUMAR</option>
-                                    <option data-slug="3fcbf5d3-bf4b-4fcf-81fc-8278829edd8d" value="1555">AGT00008 - VIKAS SARASWAT</option>
-                                    <option data-slug="25d4779a-16a3-48ed-90f5-ea4033b316e6" value="1556">AGT00009 - AMIT KAUSHIK</option>
-                                    <option data-slug="897ec4af-df83-4aed-83f9-d4d4db707652" value="1558">AGT00010 - RAMESHWAR PRASAD AHIRWAR</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                              <label for="q_account_number_cont">Account No :</label>
-                              <input class="form-control" placeholder="Search Account No" autocomplete="off" type="search" name="q[account_number_cont]" id="q_account_number_cont">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                              <label for="q_status_in">A/C Status :</label>
-                              <select class="form-control" name="q[status_in]" id="q_status_in">
-                                  <option value="all">All</option>
-                                  <option value="pending_for_approval">Pending for Approval</option>
-                                  <option value="active">Active</option>
-                                  <option value="suspended">Suspended</option>
-                                  <option value="closed">Closed</option>
-                                  <option value="disapproved">Disapproved</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="q_open_date_gteq">Open Date From:</label>
-                                <input class="form-control bg-white datepicker-inputmask" placeholder="DD/MM/YYYY" autocomplete="off" type="search" name="q[open_date_gteq]" id="q_open_date_gteq">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="q_open_date_lteq">Open Date To:</label>
-                                <input class="form-control bg-white datepicker-inputmask" placeholder="DD/MM/YYYY" autocomplete="off" type="search" name="q[open_date_lteq]" id="q_open_date_lteq">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="q_member_number_cont">Member No :</label>
-                                <input class="form-control" placeholder="Search Member No" autocomplete="off" type="search" name="q[member_number_cont]" id="q_member_number_cont">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="q_first_name_cont">Member First Name :</label>
-                                <input class="form-control" placeholder="Search First Name" autocomplete="off" type="search" name="q[first_name_cont]" id="q_first_name_cont">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="q_last_name_cont">Member Last Name :</label>
-                                <input class="form-control" placeholder="Search Last Name" autocomplete="off" type="search" name="q[last_name_cont]" id="q_last_name_cont">
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="q_mobile_no_cont">Mobile No :</label>
-                                <input class="form-control" placeholder="Search Mobile No" autocomplete="off" type="search" name="q[mobile_no_cont]" id="q_mobile_no_cont">
+                                <label for="upi_id"> UPI ID :</label>
+                                <input class="form-control" placeholder="Search UPI ID" autocomplete="off" type="search" name="" id="upi_id">
                             </div>
                         </div>
                         <div class="text-center" style="margin-top: 10px;">
@@ -293,15 +222,129 @@
                   </form>
                 </div>
                 <div class="content-div member memberList">
-                    <h2> MIS Accounts </h2>
+                    <h2> Member List </h2>
                     <div class="table-responsive">
-                        <p class="not_found"> No MIS Accounts Found. </p>
-                    </div>
+                        <table class="table table-hover table-header">
+                            <thead>
+                                <tr>
+                                <th>VA ID</th>
+                                <th>BRANCH</th>
+                                <th>MEMBER NO</th>
+                                <th>MEMBER NAME</th>
+                                <th>ACCOUNT</th>
+                                <th class="text-right">UPI ID</th>
+                                <th class="text-right">ACTIVE</th>
+                                <th class="text-right">SHOW / PRINT</th>
+                                <th class="text-right">ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="">5sb20163</a></td>
+                                    <td>MAIN BRANCH</td>
+                                    <td><a title="View" href="">M20320</a></td>
+                                    <td>SONAKSHI</td>
+                                    <td>Saving - <a href="">6999417220163</a></td>
+                                    <td class="text-right">cfupi.725sb20163@icici</td>
+                                    <td class="text-center"><span class="label label-success">Yes</span></td>
+                                    <td class="text-center"><span class="label label-success">Yes</span></td>
+                                    <td class="text-center">
+                                        <a class="btn btn-default" title="View" href="#">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">5sb20234</a></td>
+                                    <td>MAIN BRANCH</td>
+                                    <td><a title="View" href="">M20393</a></td>
+                                    <td>SIDDHI</td>
+                                    <td>Saving - <a href="">6999417220234</a></td>
+                                    <td class="text-right">cfupi.725sb20234@icici</td>
+                                    <td class="text-center"><span class="label label-danger">No</span></td>
+                                    <td class="text-center"><span class="label label-success">Yes</span></td>
+                                    <td class="text-center">
+                                        <a class="btn btn-default" title="View" href="#">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">5sb20166</a></td>
+                                    <td>MAIN BRANCH</td>
+                                    <td><a title="View" href="">M20323</a></td>
+                                    <td>RHAMAT</td>
+                                    <td>Saving - <a href="">6999417220166</a></td>
+                                    <td class="text-right">cfupi.725sb20166@icici</td>
+                                    <td class="text-center"><span class="label label-success">Yes</span></td>
+                                    <td class="text-center"><span class="label label-danger">No</span></td>
+                                    <td class="text-center">
+                                        <a class="btn btn-default" title="View" href="#">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">5sb20167</a></td>
+                                    <td>MAIN BRANCH</td>
+                                    <td><a title="View" href="">M20319</a></td>
+                                    <td>DHRUV BAJPAI</td>
+                                    <td>Saving - <a href="">6999417220167</a></td>
+                                    <td class="text-right">cfupi.725sb20167@icici</td>
+                                    <td class="text-center"><span class="label label-success">Yes</span></td>
+                                    <td class="text-center"><span class="label label-success">Yes</span></td>
+                                    <td class="text-center">
+                                        <a class="btn btn-default" title="View" href="#">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">5sb20169</a></td>
+                                    <td>MAIN BRANCH</td>
+                                    <td><a title="View" href="">M20325</a></td>
+                                    <td>VISHAL KUMAR</td>
+                                    <td>Saving - <a href="">6999417220169</a></td>
+                                    <td class="text-right">cfupi.725sb20169@icici</td>
+                                    <td class="text-center"><span class="label label-danger">No</span></td>
+                                    <td class="text-center"><span class="label label-danger">No</span></td>
+                                    <td class="text-center">
+                                        <a class="btn btn-default" title="View" href="#">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="">5sb20170</a></td>
+                                    <td>MAIN BRANCH</td>
+                                    <td><a title="View" href="">M20328</a></td>
+                                    <td>MOSIM KHAN</td>
+                                    <td>Saving - <a href="">6999417220170</a></td>
+                                    <td class="text-right">cfupi.725sb20170@icici</td>
+                                    <td class="text-center"><span class="label label-success">Yes</span></td>
+                                    <td class="text-center"><span class="label label-success">Yes</span></td>
+                                    <td class="text-center">
+                                        <a class="btn btn-default" title="View" href="#">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </a>
+                                    </td>
+                              </tr>
+                          </tbody>
+                        </table>
+                          <div class="table-footer">
+                              <div class="pagination">
+                                  <a href="" class="active"> <span> 1 </span> </a>
+                                  <a href=""> <span> 2 </span> </a>
+                                  <a href=""> <span> Next <i class="fa fa-angle-right"></i> </span> </a>
+                                  <a href=""> <span> Last <i class="fa fa-angle-double-right"></i> </span> </a>
+                              </div>
+                          </div>
+                      </div>
                 </div>
             </div>
             <div class="foot" style="margin-top: 25px;">
                 <div class="copy">
-                    <p> Copyright © 2018 - 21. All centers reserved. </p>
+                    <p> Copyright © 2018 - 21. All rights reserved. </p>
                 </div>
                 <div class="images">
                     <img src="./images/security.png" alt="Security Logo">
@@ -312,11 +355,11 @@
     <!-- Main Content End -->
 
 	<!-- Scroll Button -->
-	<div class="scrolltop float-center">
+	<div class="scrolltop float-right">
         <i class="fa fa-chevron-up" onclick="goToTop()" id="myBtn"></i>  
     </div>
 
     <script src="./js/main.js"></script>
-
+    
 </body>
 </html>

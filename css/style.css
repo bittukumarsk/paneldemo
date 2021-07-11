@@ -242,7 +242,7 @@ button.active, button:hover
     height: 100%;
     position: fixed;
     left: 0px;
-    background: #4c3be4a1;
+    background: #222d32;
     z-index: 999;
     overflow-y: auto;
     overflow-x: hidden;
@@ -291,12 +291,23 @@ button.active, button:hover
     object-fit: cover;
     border-radius: 50%;
 }
+.sidebar-inner .profile-info .profile-data
+{
+    margin-bottom: 7px;
+}
 .sidebar-inner .profile-info .profile-data .name 
 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #fff;
-    margin-top: 15px;
+    margin-top: 20px;
     font-family: "montserrat-medium";
+}
+.sidebar-inner .profile-info .profile-data p:last-child
+{
+    color: #aaa;
+    font-family: "montserrat-medium";
+    font-size: 0.9rem;
+    margin-top: 3px;
 }
 .sidebar-inner .sidebar-form
 {
@@ -318,19 +329,23 @@ button.active, button:hover
     width: calc(100% - 40px);
     border: none;
     padding: 10px;
-    background-color: #ccc;
-    color: #555;
-    font-family: "montserrat-semibold";
+    background-color: #666;
+    color: #ccc;
+    font-family: "montserrat-medium";
     outline: none;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
+}
+.sidebar-inner .sidebar-form .input-group input::placeholder
+{
+    color: #aaa !important;
 }
 .sidebar-inner .sidebar-form .input-group .input-group-btn button
 {
     border-radius: 0;
     width: 40px;
     padding: 11px;
-    background-color: #ccc;
+    background-color: #666;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     display: flex;
@@ -339,7 +354,7 @@ button.active, button:hover
 }
 .sidebar-inner .sidebar-form .input-group .input-group-btn button i
 {
-    color: #555;
+    color: #ccc;
     font-size: 1.1rem;
 }
 .sidebar-inner .sidebar-form .input-group .input-group-btn button:hover
@@ -354,14 +369,14 @@ button.active, button:hover
 }
 .sidebar-inner .sidebar-menu > li > a 
 {
-    padding: 10px;
+    padding: 8px 10px;
     display: flex;
     font-size: 1rem;
     font-family: "montserrat-medium";
     align-items: center;
     position: relative;
     margin-bottom: 1px;
-    color: #111;
+    color: #aaa;
     cursor: pointer;
     transition: all linear 0.3s;
 }
@@ -376,7 +391,7 @@ button.active, button:hover
 .sidebar-inner .sidebar-menu > li.show > a,
 .sidebar-inner .sidebar-menu > li > a:hover
 {
-    background: #2758c1;
+    background: #0f1416;
     color: #cfcfcf;
 }
 .sidebar-inner .sidebar-menu > li > a .arrow
@@ -390,8 +405,8 @@ button.active, button:hover
 }
 .sidebar-inner .sidebar-menu li .accordion
 {
-    background: #2783c1ab;
-    padding-left: 50px;
+    background: #0f1416ab;
+    padding-left: 35px;
     height: 0;
     transition: all linear 0.3s;
     overflow: hidden;
@@ -404,7 +419,7 @@ button.active, button:hover
 .sidebar-inner .sidebar-menu .accordion li a
 {
     display: block;
-    color: #000 !important;
+    color: #777 !important;
     padding: 8px 0;
     font-family: "montserrat-medium";
     font-size: 0.9rem;  
@@ -707,10 +722,10 @@ button.active, button:hover
 }
 .main-container .main-content .content-div .form-horizontal .form-group label
 {
-    flex: 0 0 15%;
+    flex: 0 0 20%;
     float: left;
-    -ms-flex: 0 0 15%;
-    max-width: 15%;
+    -ms-flex: 0 0 20%;
+    max-width: 20%;
     padding: 10px;
     font-size: 1rem;
     user-select: none;
@@ -718,15 +733,19 @@ button.active, button:hover
     text-align: right;
     font-family: "montserrat-semibold";
 }
+.main-container .main-content .content-div .form-horizontal .form-group label span
+{
+    color: red;
+}
 .main-container .main-content .content-div .form-horizontal .form-group select,
 .main-container .main-content .content-div .form-horizontal .form-group input
 {
     float: right;
     background-color: #eee;
-    flex: 0 0 85%;
+    flex: 0 0 80%;
     outline: none;
-    -ms-flex: 0 0 85%;
-    max-width: 85%;
+    -ms-flex: 0 0 80%;
+    max-width: 80%;
     padding: 5px 8px;
     font-size: 1rem;
     font-family: "Montserrat-Medium";
@@ -755,12 +774,42 @@ button.active, button:hover
     color: #666;
     margin-right: 25px;
 }
+.main-container .main-content .member-page .heading p
+{
+    font-size: 0.9rem;
+    margin-top: 7px;
+    font-family: "montserrat-semibold";
+    color: #555;
+}
+.main-container .main-content .member-page .heading p a
+{
+    color: #6771ce;
+}
+.main-container .main-content .member-page .heading p a::after
+{
+    content: '\226B';
+    margin: 0 8px;
+    font-family: "montserrat-bold";
+    color: #555;
+}
 .main-container .main-content .member-page .heading button
 {
     border-radius: 3px;
     font-size: 1.25rem;
     padding: 6px 10px;
     color: #ddd !important;
+}
+.main-container .main-content .member-page .heading button.mem_detail
+{
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    margin-top: 10px;
+    font-family: "montserrat-semibold";
+    width: max-content;
+}
+.main-container .main-content .member-page.member_details .member_search_div
+{
+    width: 50%;
 }
 .main-container .main-content .member-page .content-div.member
 {
@@ -774,7 +823,7 @@ button.active, button:hover
 .main-container .main-content .member-page .content-div.member h2
 {
     font-size: 1.25rem;
-    font-family: "montserrat-semibold";
+    font-family: "montserrat-bold";
     color: #555;
 }
 .main-container .main-content .member-page .content-div.member #member_search
@@ -809,6 +858,30 @@ button.active, button:hover
     margin-right: 8px;
     width: 20px;
     height: 20px;
+}
+.main-container .main-content .search-page .content-div .form-group .options
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-container .main-content .search-page .content-div .form-group .options input[type="radio"]
+{
+    flex: unset !important;
+    -ms-flex: unset !important;
+    max-width: unset !important;
+    margin-right: 7px;
+    cursor: pointer;
+}
+.main-container .main-content .search-page .content-div .form-group .options label
+{
+    flex: unset;
+    float: unset;
+    -ms-flex: unset;
+    max-width: unset;
+    padding: 0;
+    margin-right: 35px;
+    cursor: pointer;
 }
 .main-container .main-content .member-page .content-div.member #member_search .col-md-3 span.holds label
 {
@@ -869,13 +942,20 @@ button.active, button:hover
     justify-content: center;
     align-items: center;
 }
-.main-container .main-content .member-page .content-div.member #member_search .text-center .clearForm
+.main-container .main-content .member-page .content-div.member #member_search .text-center .clearForm,
+.main-container .main-content .search-page .content-div .text-center .clearForm,
+.main-container .main-content .member-page .account_buttons button.clearForm
 {
     padding: 7px 15px;
     margin-left: 12px;
     border: 1px solid #3e27c1b3;
     color: #333 !important;
     background-color: transparent;
+    font-family: "montserrat-bold";
+}
+.main-container .main-content .member-page .account_buttons button.clearForm
+{
+    font-family: "montserrat-semibold";
 }
 .main-container .main-content .member-page .content-div.memberList
 {
@@ -941,6 +1021,10 @@ button.active, button:hover
 {
     text-align: right;
 }
+.main-container .main-content .member-page .content-div.memberList .table-responsive table tbody tr td a
+{
+    color: #2758c1;
+}
 .main-container .main-content .member-page .content-div.memberList .table-responsive table tbody tr td span.label
 {
     padding: 2px 4px;
@@ -1001,6 +1085,61 @@ button.active, button:hover
 {
     background-color: #2758c1;
 }
+.main-container .main-content .member-page .fullDetailsPage
+{
+    display: flex;
+    justify-content: space-between;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.main-container .main-content .member-page .fullDetailsPage .right_div .table-responsive table tbody tr td span.label
+{
+    cursor: pointer;
+}
+.main-container .main-content .member-page .fullDetailsPage .table-responsive table tr th,
+.main-container .main-content .member-page .fullDetailsPage .table-responsive table tr td
+{
+    padding: 10px 0 !important;
+}
+.main-container .main-content .member-page .fullDetailsPage .table-responsive table tr td:first-child
+{
+    font-family: "montserrat-semibold";
+    min-width: 125px !important;
+}
+.main-container .main-content .member-page .fullDetailsPage .left_div,
+.main-container .main-content .member-page .fullDetailsPage .right_div
+{
+    display: flex;
+    flex: 0 0 49%;
+    max-width: 49%;
+    flex-direction: column;
+}
+.main-container .main-content .member-page .fullDetailsPage .left_div .content-div,
+.main-container .main-content .member-page .fullDetailsPage .right_div .content-div
+{
+    width: 100%;
+    position: relative;
+}
+.main-container .main-content .member-page .content-div.member .marker
+{
+    position: absolute;
+    display: none;
+    top: 30px;
+    right: 30px;
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: "montserrat-semibold";
+}
+.main-container .main-content .member-page .content-div.member .marker::after
+{
+    content: '+';
+}
+.main-container .main-content .member-page .content-div.member_search_div.view .marker::after
+{
+    content: '-';
+    top: 25px;
+}
 
 
 
@@ -1039,6 +1178,19 @@ button.active, button:hover
 
 
 /* Media Queries */
+@media (max-width: 1250px)
+{
+    .main-container .main-content .member-page .content-div.memberList .table-responsive
+    {
+        width: auto;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    .main-container .main-content .member-page .content-div.memberList .table-footer
+    {
+        margin: 20px 0;
+    }
+}
 @media (max-width: 991px)
 {
     .sidebar-inner
@@ -1058,5 +1210,85 @@ button.active, button:hover
     {
         margin-left: 250px;
         width: calc(100% - 250px);
+    }
+    .main-container .main-content .member-page .content-div.member #member_search .col-md-3
+    {
+        flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+        max-width: 100%;
+        padding-right: 0;
+    }
+    .main-container .main-content .member-page .content-div.member #member_search .clearSmall,
+    .main-container .main-content .member-page .content-div.member #member_search .clear,
+    .main-container .main-content .member-page .content-div.member #member_search .clearBig
+    {
+        display: none;
+    }
+    .main-container .main-content .member-page .content-div.member_search_div
+    {
+        height: 80px;
+        overflow: hidden;
+        position: relative;
+        transition: 0.5s ease-in-out;
+    }
+    .main-container .main-content .member-page .content-div.member_search_div.view #member_search
+    {
+        display: block;
+    }
+    .main-container .main-content .member-page .content-div.member_search_div.view
+    {
+        height: max-content;
+        overflow: visible;
+    }
+    .main-container .main-content .member-page .content-div.member .marker
+    {
+        display: block;
+    }
+    /* .main-container .main-content .member-page .content-div.member_search_div.view::after
+    {
+        content: '-';
+    }
+    .main-container .main-content .member-page .content-div.member_search_div::after
+    {
+        content: '+';
+        position: absolute;
+        top: 35px;
+        right: 30px;
+        font-size: 1.4rem;
+        font-family: "montserrat-semibold";
+        transform: translateY(-50%);
+        cursor: pointer;
+    } */
+    .main-container .main-content .member-page .content-div.member #member_search
+    {
+        display: none;
+    }
+    .main-container .main-content .member-page .content-div.memberList .table-responsive
+    {
+        width: auto;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    .main-container .main-content .member-page .fullDetailsPage .right_div .content-div.member_search_div .table-responsive
+    {
+        display: none;
+    }
+    .main-container .main-content .member-page .fullDetailsPage .right_div .content-div.member_search_div.view .table-responsive
+    {
+        display: block;
+    }
+    .main-container .main-content .member-page .fullDetailsPage .left_div,
+    .main-container .main-content .member-page .fullDetailsPage .right_div
+    {
+        max-width: 100% !important;
+        flex: 0 0 100%;
+    }
+}
+@media (max-width: 620px)
+{
+    .main-container.hide-sidebar .main-content
+    {
+        margin-left: 0;
+        width: 100%;
     }
 }

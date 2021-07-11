@@ -15,22 +15,6 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-    <!-- Loader Section Start -->
-    <!-- <div class="loader">
-        <div class="loader-inner">
-            <div class="loader-inner-item">
-                <div class="loader-inner-item">
-                    <div class="loader-inner-item">
-                        <div class="loader-inner-item">
-                            <div class="loader-inner-item"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Loader Section Finish -->
-
     <!-- Header Section Start -->
     <header class="header">
         <div class="open hide"> <i class="fa fa-bars"></i> </div>
@@ -64,7 +48,8 @@
                         <a href="index.html"> <img src="./images/user.jpg" alt="User Image" title="User Image"> </a>
                     </div>
                     <div class="profile-data">
-                        <p class="name"> Welcome, Username </p>
+                        <p class="name"> Welcome, Rupam Kumari </p>
+                        <p> Associate since March 2021 </p>
                     </div>
                 </div>
                 <form class="sidebar-form" action="" method="get">
@@ -83,7 +68,7 @@
                         </a>
                     </li>
                     <li class="active" onclick="changeState(1)">
-                        <a href="index.html">
+                        <a href="index.html" class="active">
                             <div class="icon"> <i class="fa fa-tachometer"></i> </div>
                             <div class="title"> Dashboard </div>
                         </a>
@@ -135,10 +120,10 @@
                         </a>
                         <ul class="accordion">
                             <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> RD Accounts </a>
+                                <a href="rd_accounts.html"><i class="fa fa-circle-o"></i> RD Accounts </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> DD Accounts </a>
+                                <a href="dd_accounts.html"><i class="fa fa-circle-o"></i> DD Accounts </a>
                             </li>
                         </ul>
                     </li>
@@ -150,22 +135,22 @@
                         </a>
                         <ul class="accordion">
                             <li>
-                                <a href="index.html"><i class="fa fa-circle-o"></i> Saving Pass Book </a>
+                                <a href="print-passbook.html"><i class="fa fa-circle-o"></i> Saving Pass Book </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> FD / MIS Bond </a>
+                                <a href="fd_mis_print.html"><i class="fa fa-circle-o"></i> FD / MIS Bond </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> FD / MIS Pass Book </a>
+                                <a href="fd_mis_passbook.html"><i class="fa fa-circle-o"></i> FD / MIS Pass Book </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> RD / DD Bond </a>
+                                <a href="rd_dd_bond.html"><i class="fa fa-circle-o"></i> RD / DD Bond </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> RD / DD Pass Book </a>
+                                <a href="rd_dd_passbook.html"><i class="fa fa-circle-o"></i> RD / DD Pass Book </a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> RD / DD Receipt </a>
+                                <a href="rd_dd_receipt.html"><i class="fa fa-circle-o"></i> RD / DD Receipt </a>
                             </li>
                         </ul>
                     </li>
@@ -177,7 +162,7 @@
                         </a>
                         <ul class="accordion">
                             <li>
-                                <a href="#"><i class="fa fa-circle-o"></i> CF Virtual UPIs </a>
+                                <a href="cf_virtual_upi.html"><i class="fa fa-circle-o"></i> CF Virtual UPIs </a>
                             </li>
                         </ul>
                     </li>
@@ -231,7 +216,7 @@
                         <p> Members </p>
                         <i class="fa fa-users"></i>
                     </div>
-                    <a href="#">
+                    <a href="members.html">
                         <div class="text"> View Details </div>
                         <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
                     </a>
@@ -242,7 +227,7 @@
                         <p> Saving Accounts </p>
                         <i class="fa fa-th-list"></i>
                     </div>
-                    <a href="#">
+                    <a href="accounts.html?type=saving">
                         <div class="text"> View Details </div>
                         <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
                     </a>
@@ -253,40 +238,7 @@
                         <p> Current Accounts </p>
                         <i class="fa fa-th-list"></i>
                     </div>
-                    <a href="#">
-                        <div class="text"> View Details </div>
-                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <div class="details">
-                        <span> 125 </span>
-                        <p> MIS Accounts </p>
-                        <i class="fa fa-th-list"></i>
-                    </div>
-                    <a href="#">
-                        <div class="text"> View Details </div>
-                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <div class="details">
-                        <span> 97 </span>
-                        <p> Recurring Deposits (RDs) </p>
-                        <i class="fa fa-th-list"></i>
-                    </div>
-                    <a href="#">
-                        <div class="text"> View Details </div>
-                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <div class="details">
-                        <span> 234 </span>
-                        <p> Daily Deposits (DDs) </p>
-                        <i class="fa fa-th-list"></i>
-                    </div>
-                    <a href="#">
+                    <a href="accounts.html?type=current">
                         <div class="text"> View Details </div>
                         <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
                     </a>
@@ -297,7 +249,40 @@
                         <p> Fixed Deposits (FDs) </p>
                         <i class="fa fa-th-list"></i>
                     </div>
-                    <a href="#">
+                    <a href="fd_accounts.html">
+                        <div class="text"> View Details </div>
+                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="details">
+                        <span> 125 </span>
+                        <p> MIS Accounts </p>
+                        <i class="fa fa-th-list"></i>
+                    </div>
+                    <a href="mis_accounts.html">
+                        <div class="text"> View Details </div>
+                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="details">
+                        <span> 97 </span>
+                        <p> Recurring Deposits (RDs) </p>
+                        <i class="fa fa-th-list"></i>
+                    </div>
+                    <a href="rd_accounts.html">
+                        <div class="text"> View Details </div>
+                        <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <div class="details">
+                        <span> 234 </span>
+                        <p> Daily Deposits (DDs) </p>
+                        <i class="fa fa-th-list"></i>
+                    </div>
+                    <a href="dd_accounts.html">
                         <div class="text"> View Details </div>
                         <div class="icon"> <i class="fa fa-chevron-right"></i> </div>
                     </a>
